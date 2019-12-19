@@ -10,6 +10,7 @@ import TickerConfig
 from agency.agency_tools import proxy
 from config.emailConf import sendEmail
 from config.serverchanConf import sendServerChan
+from config.bearyChat import notification_by_bearyChat
 from inter.LiftTicketInit import liftTicketInit
 
 

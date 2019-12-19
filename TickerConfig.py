@@ -66,6 +66,15 @@ HTTP_TYPE = "http"
 # REQ_URL="/verify/base64/"
 # HTTP_TYPE="https"
 
+'''
+通知配置
+
+邮箱
+server酱
+倍洽(webhook)
+
+'''
+
 #  邮箱配置，如果抢票成功，将通过邮件配置通知给您
 #  列举163
 #  email: "xxx@163.com"
@@ -92,6 +101,12 @@ EMAIL_CONF = {
 SERVER_CHAN_CONF = {
     "is_server_chan": False,
     "secret": ""
+}
+
+# 是否使用 倍洽 通知，https://bearychat.com/ 免费注册
+BEARY_CHART_CONF = {
+    'is_enable': False,
+    'url': ''
 }
 
 # 是否开启cdn查询，可以更快的检测票票 1为开启，2为关闭

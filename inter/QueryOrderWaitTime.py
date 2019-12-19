@@ -5,6 +5,7 @@ import time
 from config.TicketEnmu import ticket
 from config.emailConf import sendEmail
 from config.serverchanConf import sendServerChan
+from config.bearyChat import notification_by_bearyChat
 from myException.ticketIsExitsException import ticketIsExitsException
 from myException.ticketNumOutException import ticketNumOutException
 
@@ -45,6 +46,7 @@ class queryOrderWaitTime:
                             data.get("orderId", "")))
                         sendServerChan(ticket.WAIT_ORDER_SUCCESS.format(
                             data.get("orderId", "")))
+                        notification_by_bearyChat()
                         raise ticketIsExitsException(ticket.WAIT_ORDER_SUCCESS.format(
                             data.get("orderId")))
                     elif data.get("msg", False):
