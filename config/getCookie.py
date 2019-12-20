@@ -17,11 +17,13 @@ def getDrvicesID(session):
         cookies = []
         # 解决放镜像里 DevToolsActivePort file doesn't exist的问题
         options = webdriver.ChromeOptions()
+        options.add_argument("--disable-extensions")
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--headless")
         if os.name != 'nt' and TickerConfig.CHROME_CHROME_PATH:
-            options = webdriver.ChromeOptions()
             options.binary_location = TickerConfig.CHROME_CHROME_PATH
-            options.add_argument("--no-sandbox")
-            options.add_argument("--headless")
+
         driver = webdriver.Chrome(executable_path=TickerConfig.CHROME_PATH,chrome_options=options)
         driver.get("https://www.12306.cn/index/index.html")
         time.sleep(10)
